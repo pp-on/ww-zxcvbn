@@ -14,8 +14,8 @@ function dequeue_default_zxcvbn() {
 add_action('wp_enqueue_scripts', 'dequeue_default_zxcvbn', 9999);
 
 //mein script einziehen
-function custom_zxcvbn_enqueue_script() {
-    wp_enqueue_script('custom-zxcvbn-script', plugin_dir_url(__FILE__) . 'js/custom-zxcvbn.js', array(), '1.0', true);
+function ww_zxcvbn_enqueue_script() {
+    wp_enqueue_script('ww-zxcvbn-script', plugin_dir_url(__FILE__) . 'dist/ww-zxcvbn.js', array(), '1.0', true);
 }
-add_action('wp_enqueue_scripts', 'custom_zxcvbn_enqueue_script');
+add_action('wp_enqueue_scripts', 'ww_zxcvbn_enqueue_script');
 
