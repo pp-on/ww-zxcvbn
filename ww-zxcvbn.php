@@ -19,3 +19,15 @@ function ww_zxcvbn_enqueue_script() {
 }
 add_action('wp_enqueue_scripts', 'ww_zxcvbn_enqueue_script');
 
+function add_password_strength_indicator() {
+    ?>
+    <p>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <div id="password-strength"></div>
+    </p>
+    <?php
+}
+add_action('register_form', 'add_password_strength_indicator_to_forms');
+add_action('lostpassword_form', 'add_password_strength_indicator_to_forms');
+
